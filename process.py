@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 
 NBINS = 9
 CELL_SIZE = (8, 8)
-BLOCK_SIZE = (2, 2)
+BLOCK_SIZE = (3, 3)
 
 
 def train_or_load_facial_expression_recognition_model(train_image_paths, train_image_labels):
@@ -86,7 +86,7 @@ def extract_facial_expression_from_image(trained_model, image_path):
     predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
     image = load_image(image_path)
     print(image.shape)
-    image = cv2.resize(image, (190, 262))
+    image = cv2.resize(image, (250, 250))
     rects = detector(image, 1)
 
     shape = []
@@ -121,7 +121,7 @@ def display_image(image):
 
 
 def resize_image(image):
-    resized = cv2.resize(image, (190, 262), interpolation=cv2.INTER_AREA)
+    resized = cv2.resize(image, (250, 250), interpolation=cv2.INTER_AREA)
     return resized
 
 
