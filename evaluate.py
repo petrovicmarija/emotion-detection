@@ -3,7 +3,7 @@ import sys
 import os
 
 # ------------------------------------------------------------------
-# Ovaj fajl ne menjati, da bi automatsko ocenjivanje bilo moguce
+# Za automatsko ocenjivanje
 if len(sys.argv) > 1:
     VALIDATION_DATASET_PATH = sys.argv[1]
 else:

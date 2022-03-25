@@ -4,7 +4,7 @@ import sys
 import os
 
 # ------------------------------------------------------------------
-# Ovaj fajl ne menjati, da bi automatsko ocenjivanje bilo moguce
+# Za automatsko ocenjivanje
 if len(sys.argv) > 1:
     TRAIN_DATASET_PATH = sys.argv[1]
 else:
@@ -33,10 +33,10 @@ for image_name in os.listdir(TRAIN_DATASET_PATH):
         train_image_paths.append(os.path.join(TRAIN_DATASET_PATH, image_name))
         train_image_labels.append(label_dict[image_name])
 
-# istrenirati model za prepoznavanje ekspresije lica
+# treniranje modela za prepoznavanje ekspresije lica
 model = train_or_load_facial_expression_recognition_model(train_image_paths, train_image_labels)
 
-# izvrsiti citanje teksta sa svih fotografija iz validacionog skupa podataka, koriscenjem istreniranog modela
+# citanje teksta sa svih fotografija iz validacionog skupa podataka, koriscenjem istreniranog modela
 processed_image_names = []
 extracted_facial_expression = []
 
